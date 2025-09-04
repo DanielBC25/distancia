@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Frases para Você</title>
+    <style>
+        body {
+            background-color: #fff176; /* amarelo clarinho */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        img {
+            width: 120px; /* ajuste o tamanho conforme desejar */
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        #frase {
+            font-size: 22px;
+            color: black;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        button {
+            background-color: #fdd835; /* amarelo mais vivo */
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #fbc02d;
+        }
+
+        #audioControls {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="girassol.png" alt="Girassol">
+
+    <!-- Player de música oculto -->
+    <audio id="musicaFundo" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Botão para play/pause -->
+    <div id="audioControls">
+        <button onclick="toggleMusica()">▶</button>
+    </div>
+
+    <h1>Frases para Você</h1>
+    <div id="frase">Frases que me lembram você!</div>
+    <button onclick="novaFrase()">Clique para mais!</button>
+
+    <script>
+        const frases = [
+            "A distância pode separar corpos, mas não corações.",
+            "Mesmo longe, você está sempre perto em meus pensamentos.",
+            "A distância vai nos mostrar a emoção do nosso encontro.",
+            "Às vezes, a distância aproxima mais do que a presença, mas eu queria estar muito mais perto de você.",
+            "Distância não é ausência, é prova de paciência para aqueles que realmente querem fazer dar certo.",
+            "O sentimento verdadeiro sobrevive até à maior distância.",
+            "A distância vai fazer nosso encontro ainda mais precioso.",
+            "Você está longe dos meus olhos, perto do meu coração.",
+            "Quando achar que eu estou longe, lembre que mesmo separados, compartilhamos a mesma lua.",
+            "Longe ou perto, a lembrança permanece.",
+            "A distância é grande, mas a vontade de estar perto é maior.",
+            "Corações conectados superam qualquer distância.",
+            "A distância dá valor aos pequenos gestos, como este site!",
+            "Até a distância mais longa pode ser encurtada por uma mensagem, ou um site de frases fofas!",
+            "A distância transforma saudade em poesia, ou em um site bonitinho.",
+            "Você pode estar longe dos meus braços, mas nunca da minha mente.",
+            "A distância pode ensinar o verdadeiro significado da presença.",
+            "Mesmo distantes, seguimos lado a lado em pensamento.",
+            "A distância é apenas geografia; o sentimento é infinito.",
+            "Quanto mais longe, mais precioso se torna o encontro.",
+            "Distância e amor são compatíveis quando há confiança.",
+            "A distância nos ensina a valorizar cada momento juntos, e eu não quero perder nenhum com você.",
+            "Entre nós há espaço, mas não há vazio.",
+            "A distância transforma lembranças em tesouros, e espero logo ter nossos tesouros.",
+            "Nem toda distância é distância de coração.",
+            "Cada dia distante é um dia mais próximo do reencontro.",
+            "A distância não impede quem quer estar presente.",
+            "Às vezes, o silêncio da distância fala mais que palavras.",
+            "Distância é apenas uma medida, não um limite.",
+            "A distância aumenta o desejo de voltar, ou de ir até você.",
+            "Mesmo longe, sinto sua presença.",
+            "A distância nos faz contar histórias em pensamentos.",
+            "Entre nós, apenas a distância física existe.",
+            "A distância nos lembra do quanto nosso encontro vai ser insuperável.",
+            "A distância pode ser longa, mas o sentimento é maior.",
+            "Nem toda distância diminui o sentimento.",
+            "A distância revela a força do vínculo.",
+            "Quanto maior a distância, mais doce o reencontro.",
+            "Tenho uma regressiva para o nosso encontro, mas não importa o tempo que o relógio marcar, parece que dura sempre uma eternidade!",
+            "A distância é como os ventos: apaga as velas e acende as grandes fogueiras.",
+            "Não importa a distância que nos separa, e sim o sentimento que nos une.",
+            "Não importa a distância que nos separa, se há um céu que nos une.",
+            "Você é a pessoa certa, na distância errada.",
+            "Sentir saudades de algo que não aconteceu é preço"
+        ];
+
+        function novaFrase() {
+            const index = Math.floor(Math.random() * frases.length);
+            document.getElementById('frase').innerText = frases[index];
+        }
+
+        // Função para tocar/pausar música
+        function toggleMusica() {
+            const musica = document.getElementById('musicaFundo');
+            if (musica.paused) {
+                musica.play();
+            } else {
+                musica.pause();
+            }
+        }
+    </script>
+</body>
+</html>
